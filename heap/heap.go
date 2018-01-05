@@ -1,16 +1,20 @@
+// Package heap provides a data structure for a min heap and
+// methods that operate on it.
 package heap
 
+// Heap represents a min heap data structure.
 type Heap struct {
 	h     []int
 	count int
 }
 
+// NewMinHeap creates a new min heap with the capacity for cap items.
 func NewMinHeap(cap int) Heap {
 	heap := make([]int, cap)
 	return Heap{heap, 0}
 }
 
-// Insert inserts item into the heap, returning true for success or false for failure
+// Insert inserts item into the heap, returning true for success or false for failure.
 func (heap *Heap) Insert(item int) bool {
 	// Check if overflowed length and resize
 	if heap.count == cap(heap.h) {
@@ -93,7 +97,7 @@ func (heap *Heap) percolateDown() {
 	}
 }
 
-// Sort uses the heap sort algorithm to return a sorted copy of orig
+// Sort uses the heap sort algorithm to return a sorted copy of orig.
 func Sort(orig []int) []int {
 	// Insert all items into min heap
 	heap := NewMinHeap(len(orig))
