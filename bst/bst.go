@@ -18,8 +18,8 @@ type node struct {
 }
 
 // NewBST creates and returns a new, empty binary search tree
-func NewBST() *BST {
-	return &BST{}
+func NewBST() BST {
+	return BST{}
 }
 
 // Exists returns true if item in bst, else false.
